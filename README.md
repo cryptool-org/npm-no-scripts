@@ -1,0 +1,1 @@
+# npm-no-scripts
