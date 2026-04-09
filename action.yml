@@ -5,6 +5,10 @@ inputs:
     required: false
     default: ""
     description: "Packages to ignore, a JSON object or array"
+  ignoreNative:
+    required: false
+    default: false
+    description: "Ignore implicit build step for node-gyp bindings"
 runs:
   using: "node24"
   main: "dist/index.js"

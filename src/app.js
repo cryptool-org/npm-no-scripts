@@ -4,12 +4,13 @@ import { depth as traverse } from "treeverse"
 
 import { analyze } from "./analyze"
 import { shouldIgnoreFinding, shouldIgnorePackage } from "./ignore"
-import { getIgnoreList } from "./input"
+import { getIgnoreList, getIgnoreNative } from "./input"
 
 async function run() {
   try {
     // Get list of packages to ignore from the input
     const ignoreList = getIgnoreList()
+    const shouldIgnoreNative = getIgnoreNative()
 
     // Walk the node_modules/ folder to build a list of all installed dependencies
     core.debug("Load installed packages in node_modules/")
@@ -31,6 +32,7 @@ async function run() {
     // Aggregate all findings (and respect ignored packages)
     const ignored = new Set()
     const errors = []
+
     for (const [name, info] of results.entries()) {
       if (shouldIgnorePackage(ignoreList, info.node.target)) {
         ignored.add(name)
@@ -41,6 +43,11 @@ async function run() {
           ignored.add(name)
           continue
         }
+        if (f.type === "NATIVE_BINDINGS" && shouldIgnoreNative) {
+          ignored.add(name)
+          continue
+        }
+
         const version = info.node.target.version
         if (f.type === "NATIVE_BINDINGS") {
           errors.push(
