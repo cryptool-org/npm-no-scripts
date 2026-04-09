@@ -60,7 +60,13 @@ function validateIgnoreOptions(item, opts) {
 
   if (native === true || native === "true" || native === 1) {
     options.native = true
-  } else if (native === false || native === "false" || native === 0) {
+  } else if (
+    native === null ||
+    native === undefined ||
+    native === false ||
+    native === "false" ||
+    native === 0
+  ) {
     // these will also be false, as is the default
   } else if (typeof native !== "boolean") {
     core.warning(`Invalid format for '${item}.native': Must be 'boolean'`)
@@ -101,4 +107,13 @@ export function getIgnoreList() {
   }
 
   return ignores
+}
+
+export function getIgnoreNative() {
+  try {
+    return core.getBooleanInput("ignoreNative", { required: false })
+  } catch (err) {
+    core.warning(err)
+    return false
+  }
 }

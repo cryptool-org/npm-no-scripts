@@ -1,6 +1,6 @@
 {
   "name": "npm-no-scripts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Verify NPM dependencies don't have lifecycle scripts",
   "homepage": "https://github.com/cryptool-org/npm-no-scripts#readme",
   "bugs": {
