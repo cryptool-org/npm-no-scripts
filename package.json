@@ -1,0 +1,38 @@
+{
+  "name": "npm-no-scripts",
+  "version": "1.0.0",
+  "description": "Verify NPM dependencies don't have lifecycle scripts",
+  "homepage": "https://github.com/cryptool-org/npm-no-scripts#readme",
+  "bugs": {
+    "url": "https://github.com/cryptool-org/npm-no-scripts/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cryptool-org/npm-no-scripts.git"
+  },
+  "license": "MIT",
+  "author": "Bernd Busse",
+  "type": "commonjs",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "esbuild src/app.js --bundle --minify --platform=node --target=node24 --external:node-gyp/bin/node-gyp.js --outfile=dist/index.js",
+    "watch": "esbuild src/app.js --bundle --watch --platform=node --target=node24 --external:node-gyp/bin/node-gyp.js --outfile=dist/index.js",
+    "format": "prettier --cache -w .",
+    "lint": "eslint --max-warnings 0 .",
+    "lint:fix": "eslint --max-warnings 0 --fix .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@actions/core": "^3.0.0",
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
+    "@npmcli/arborist": "^9.4.2",
+    "@npmcli/node-gyp": "^5.0.0",
+    "@npmcli/package-json": "^7.0.5",
+    "esbuild": "^0.27.7",
+    "eslint": "^9.39.4",
+    "eslint-config-prettier": "^10.1.8",
+    "neostandard": "^0.13.0",
+    "prettier": "^3.8.1",
+    "semver": "^7.7.4"
+  }
+}

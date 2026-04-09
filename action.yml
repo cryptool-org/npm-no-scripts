@@ -1,0 +1,10 @@
+name: "npm-no-scripts"
+description: "Verify NPM dependencies don't have lifecycle scripts"
+inputs:
+  ignore:
+    required: false
+    default: ""
+    description: "Packages to ignore, a JSON object or array"
+runs:
+  using: "node24"
+  main: "dist/index.js"
