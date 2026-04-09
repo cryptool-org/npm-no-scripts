@@ -29,7 +29,7 @@
     "@npmcli/node-gyp": "^5.0.0",
     "@npmcli/package-json": "^7.0.5",
     "esbuild": "^0.27.7",
-    "eslint": "^9.39.4",
+    "eslint": "^10.2.0",
     "eslint-config-prettier": "^10.1.8",
     "neostandard": "^0.13.0",
     "prettier": "^3.8.1",
