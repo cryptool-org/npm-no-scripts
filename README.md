@@ -4,7 +4,9 @@ This action checks all installed NPM dependencies for lifecycle scripts (like
 `postinstall`) that would be run on installation. If any such script is found,
 the action fails with a list of offenders.
 
-> ![NOTE] Keep a lookout for
+> [!NOTE]
+>
+> Keep a lookout for
 > [RFC 54](https://github.com/npm/rfcs/blob/main/accepted/0054-make-scripts-install-opt-in.md)
 > of the NPM cli. Phase 1 of that proposal has been implemented and is shipped
 > with [v11.16.0](https://github.com/npm/cli/releases/tag/v11.16.0), currently
