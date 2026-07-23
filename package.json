@@ -25,7 +25,7 @@
   "devDependencies": {
     "@actions/core": "^3.0.1",
     "@ianvs/prettier-plugin-sort-imports": "^4.7.1",
-    "@npmcli/arborist": "^9.9.0",
+    "@npmcli/arborist": "^10.0.1",
     "@npmcli/node-gyp": "^6.0.0",
     "@npmcli/package-json": "^8.0.0",
     "esbuild": "^0.28.1",
