@@ -31,7 +31,7 @@
     "esbuild": "^0.28.2",
     "eslint": "^9.39.5",
     "eslint-config-prettier": "^10.1.8",
-    "neostandard": "^0.13.0",
+    "neostandard": "^0.14.0",
     "prettier": "^3.9.10",
     "semver": "^7.8.5"
   }
