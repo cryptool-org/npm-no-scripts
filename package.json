@@ -1,6 +1,6 @@
 {
   "name": "npm-no-scripts",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Verify NPM dependencies don't have lifecycle scripts",
   "homepage": "https://github.com/cryptool-org/npm-no-scripts#readme",
   "bugs": {
@@ -34,5 +34,8 @@
     "neostandard": "^0.14.1",
     "prettier": "^3.10.1",
     "semver": "^7.8.6"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
   }
 }
